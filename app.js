@@ -9,9 +9,9 @@ var url = "mongodb://localhost:27017/restaurant_db";
 mongo.connect(url, function(err, db){
 	//saves collection from db as var
   var collection = db.collection('restaurants');
-  // var allChoice = prompt("Type 'all' and press enter to display all restaurants' names: ");
   
-
+  //FIND ALL RESTAURANTS
+  // var allChoice = prompt("Type 'all' and press enter to display all restaurants' names: ");
   // if(allChoice == "all"){
   //   collection.find().toArray(function(err, doc){
   //     console.log(doc);
@@ -21,7 +21,7 @@ mongo.connect(url, function(err, db){
   // }
 
   //FIND SINGLE RESTAURANT
-  // find specific restaurant with prompt
+  //find specific restaurant with prompt
   // var searchRestaurant = prompt("Search Restaurants guy:");
 
   // collection.find({name: searchRestaurant}).forEach(function(doc) {
@@ -45,6 +45,7 @@ mongo.connect(url, function(err, db){
   //   yelp: addYelp
   // }
   // );
+  // console.log("New restaurant added");
 
   //EDIT USERS
 
@@ -66,18 +67,20 @@ mongo.connect(url, function(err, db){
 	// 	    yelp: updateYelp
 	// 	  });
 
-	
-  // console.log("updated restaurant");
+	// console.log("updated restaurant");
+
 
   //DELETE USER
 
   var searchRestaurant = prompt("Search Restaurants guy:");
-  collection.remove(
+  
+  	collection.remove(
   	
-  	{name: searchRestaurant}
+	  	{name: searchRestaurant}
 
-  	);
-  console.log("removed restaurant");
+	  	);
+  
+  	console.log("removed restaurant");
 
 });
  
